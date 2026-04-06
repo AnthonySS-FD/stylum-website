@@ -31,13 +31,7 @@ export default function About() {
         style={{ background: 'radial-gradient(circle, rgba(110,198,230,0.03) 0%, transparent 70%)' }}
       />
 
-      {/* Numero watermark */}
-      <div
-        className="absolute right-0 top-1/2 -translate-y-1/2 font-display font-900 select-none pointer-events-none hidden lg:block"
-        style={{ fontSize: '20rem', lineHeight: 1, color: 'rgba(255,255,255,0.015)', paddingRight: '1rem' }}
-      >
-        02
-      </div>
+  
 
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
@@ -93,7 +87,7 @@ export default function About() {
                   </div>
                   <div>
                     <p className="font-display text-lg font-900 text-brand-white uppercase tracking-tight">Lima, Peru</p>
-                    <p className="font-body text-xs text-brand-dim mt-0.5">Marca streetwear — 2024</p>
+                    <p className="font-body text-xs text-brand-dim mt-0.5">Marca streetwear — 2026</p>
                   </div>
                 </div>
                 {/* Borde accent */}

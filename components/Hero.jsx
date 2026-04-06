@@ -64,7 +64,7 @@ export default function Hero() {
         style={{ width: '28vw', maxWidth: '380px' }}
       >
         <img
-          src="/PERSONAJE_STYLUM.png"
+          src="/PERSONAJE STYLUM.png"
           alt=""
           className="w-full h-auto invert"
           style={{
@@ -107,32 +107,7 @@ export default function Hero() {
           />
         </motion.div>
 
-        {/* Wordmark grande */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="show"
-          className="mb-6"
-        >
-          {['STREET', 'WEAR'].map(function(part, i) {
-            return (
-              <div key={i} className="overflow-hidden leading-none">
-                <motion.span
-                  variants={lineVariants}
-                  className="block font-display font-900 uppercase"
-                  style={{
-                    fontSize: 'clamp(4rem, 18vw, 14rem)',
-                    letterSpacing: '-0.02em',
-                    lineHeight: 0.85,
-                    color: i === 0 ? '#F0F0F0' : '#6EC6E6',
-                  }}
-                >
-                  {part}
-                </motion.span>
-              </div>
-            );
-          })}
-        </motion.div>
+        
 
         {/* Tagline */}
         <motion.p

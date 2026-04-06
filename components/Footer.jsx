@@ -27,7 +27,7 @@ export default function Footer() {
       {/* Personaje background */}
       <div className="absolute inset-0 flex items-end justify-end pointer-events-none select-none overflow-hidden">
         <img
-          src="/PERSONAJE_STYLUM.png"
+          src="/PERSONAJE STYLUM.png"
           alt=""
           className="h-full w-auto invert"
           style={{
