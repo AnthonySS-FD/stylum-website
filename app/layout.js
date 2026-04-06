@@ -9,7 +9,7 @@ import LoadingScreen from '@/components/LoadingScreen';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
 // ── URL base de tu web ── cambia si tienes dominio propio
-var BASE_URL = 'https://stylum-kappa.vercel.app';
+var BASE_URL = 'https://stylum.pe';
 
 export const metadata = {
   // ── Titulo y descripcion ──────────────────────────────────────
