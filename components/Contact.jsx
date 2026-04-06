@@ -1,22 +1,15 @@
 'use client';
 
-// ─────────────────────────────────────────────────────────────────────────
-// components/Contact.jsx
-// Contact section with split layout, social CTAs and animated reveal
-// ─────────────────────────────────────────────────────────────────────────
-
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
-/* ── Contact channels ───────────────────────────────────────────────── */
-// Reemplaza los href con tus links reales
-const CHANNELS = [
+var CHANNELS = [
   {
     id: 'instagram',
     name: 'Instagram',
     handle: '@stylum.oficial',
-    desc: 'Sigue nuestra colección, drops y lifestyle.',
-    href: 'https://www.instagram.com/stylum.oficial/',
+    desc: 'Sigue nuestra coleccion, drops y lifestyle.',
+    href: 'https://instagram.com/stylum.oficial',
     color: '#E1306C',
     icon: (
       <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -28,9 +21,8 @@ const CHANNELS = [
     id: 'whatsapp',
     name: 'WhatsApp',
     handle: '+51 934 357 309',
-    desc: 'Consultas, pedidos y atención directa.',
-    // Reemplaza con tu número real: https://wa.me/51XXXXXXXXX
-    href: 'https://wa.me/51934357309?text=Hola%20STYLUM%2C%20quiero%20info%20sobre%20sus%20polos',
+    desc: 'Consultas, pedidos y atencion directa.',
+    href: 'https://wa.me/51934357309?text=Hola%20STYLUM!%20Quiero%20info%20sobre%20sus%20polos',
     color: '#25D366',
     icon: (
       <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -38,14 +30,13 @@ const CHANNELS = [
       </svg>
     ),
   },
-
   {
     id: 'tiktok',
     name: 'TikTok',
     handle: '@stylum25',
     desc: 'Contenido, behind the scenes y cultura STYLUM.',
-    href: 'https://www.tiktok.com/@stylum25',
-    color: '#ffffff',
+    href: 'https://tiktok.com/@stylum25',
+    color: '#F0F0F0',
     icon: (
       <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
         <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06Z"/>
@@ -54,7 +45,6 @@ const CHANNELS = [
   },
 ];
 
-/* ── Card component ─────────────────────────────────────────────────── */
 function ChannelCard({ channel, delay }) {
   return (
     <motion.a
@@ -66,109 +56,102 @@ function ChannelCard({ channel, delay }) {
       viewport={{ once: true, margin: '-15%' }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay }}
       whileHover={{ y: -4 }}
-      className="group relative flex flex-col bg-brand-surface border border-brand-border p-8 md:p-10 overflow-hidden transition-colors duration-300 hover:border-brand-muted"
+      className="group relative flex flex-col p-8 overflow-hidden transition-all duration-300"
+      style={{ background: '#141414', border: '1px solid #222' }}
+      onMouseEnter={function(e) { e.currentTarget.style.borderColor = '#2a2a2a'; }}
+      onMouseLeave={function(e) { e.currentTarget.style.borderColor = '#222'; }}
     >
-      {/* Background color blob */}
+      {/* Glow */}
       <div
-        className="absolute -top-16 -right-16 w-48 h-48 rounded-full opacity-0 group-hover:opacity-10 blur-3xl transition-opacity duration-500"
-        style={{ backgroundColor: channel.color }}
+        className="absolute -top-16 -right-16 w-48 h-48 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+        style={{ background: channel.color, filter: 'blur(60px)' }}
       />
 
       {/* Icon */}
       <div
-        className="w-12 h-12 flex items-center justify-center rounded-sm mb-6 transition-colors duration-300"
-        style={{ backgroundColor: `${channel.color}20`, color: channel.color }}
+        className="w-12 h-12 flex items-center justify-center mb-6 transition-colors duration-300"
+        style={{ background: channel.color + '18', color: channel.color }}
       >
         {channel.icon}
       </div>
 
-      {/* Text */}
-      <p className="font-body text-xs tracking-mega text-brand-dim uppercase mb-2">
-        {channel.name}
-      </p>
+      <p className="font-body text-xs tracking-mega uppercase mb-2" style={{ color: '#555' }}>{channel.name}</p>
       <h3 className="font-display text-2xl md:text-3xl font-900 text-brand-white uppercase tracking-tight mb-3">
         {channel.handle}
       </h3>
-      <p className="font-body text-sm text-brand-dim leading-relaxed mb-8">
-        {channel.desc}
-      </p>
+      <p className="font-body text-sm text-brand-dim leading-relaxed mb-8 flex-1">{channel.desc}</p>
 
-      {/* CTA */}
-      <div className="mt-auto flex items-center gap-2 font-body text-sm font-medium tracking-wider uppercase"
-        style={{ color: channel.color }}
-      >
+      <div className="flex items-center gap-2 font-body text-sm font-medium tracking-wider uppercase" style={{ color: channel.color }}>
         Ir ahora
-        <svg
-          className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
-          fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}
-        >
+        <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
         </svg>
       </div>
 
-      {/* Bottom accent line */}
+      {/* Bottom line */}
       <div
         className="absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-500"
-        style={{ backgroundColor: channel.color }}
+        style={{ background: channel.color }}
       />
     </motion.a>
   );
 }
 
-/* ── Main Section ───────────────────────────────────────────────────── */
 export default function Contact() {
-  const headerRef = useRef(null);
-  const inView    = useInView(headerRef, { once: true, margin: '-15%' });
+  var ref    = useRef(null);
+  var inView = useInView(ref, { once: true, margin: '-15%' });
 
   return (
     <section
       id="contacto"
-      className="relative py-24 md:py-32 px-6 md:px-10 bg-brand-surface border-t border-brand-border"
+      className="relative py-24 md:py-32 px-6 md:px-10 overflow-hidden"
+      style={{ background: '#141414', borderTop: '1px solid #1e1e1e' }}
     >
-      <div className="max-w-7xl mx-auto">
+      {/* Glow */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+        style={{ width: '500px', height: '300px', background: 'radial-gradient(ellipse, rgba(110,198,230,0.05) 0%, transparent 70%)' }}
+      />
 
-        {/* ── Header ──────────────────────────────────────────── */}
-        <div ref={headerRef} className="mb-14 md:mb-18 text-center">
+      <div className="max-w-7xl mx-auto">
+        <div ref={ref} className="mb-14 md:mb-18 text-center">
           <motion.p
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.5 }}
             className="font-body text-xs tracking-mega text-brand-accent uppercase mb-4"
           >
             — Contacto
           </motion.p>
-
-          {['Hablemos', 'directamente.'].map((line, i) => (
-            <div key={i} className="overflow-hidden">
-              <motion.h2
-                initial={{ y: '110%' }}
-                animate={inView ? { y: '0%' } : {}}
-                transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
-                className="font-display text-5xl md:text-7xl font-900 text-brand-white uppercase leading-none tracking-tight"
-              >
-                {line}
-              </motion.h2>
-            </div>
-          ))}
-
+          {['Hablemos', 'directamente.'].map(function(line, i) {
+            return (
+              <div key={i} className="overflow-hidden">
+                <motion.h2
+                  initial={{ y: '110%' }}
+                  animate={inView ? { y: '0%' } : {}}
+                  transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
+                  className="font-display text-5xl md:text-7xl font-900 text-brand-white uppercase leading-none tracking-tight"
+                >
+                  {line}
+                </motion.h2>
+              </div>
+            );
+          })}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ delay: 0.4 }}
             className="font-body text-sm text-brand-dim mt-6 max-w-md mx-auto leading-relaxed"
           >
-            Pedidos, consultas o simplemente hola — estamos en Instagram y WhatsApp.
+            Pedidos, consultas o simplemente hola — estamos en Instagram, WhatsApp y TikTok.
           </motion.p>
         </div>
 
-        {/* ── Channel cards ────────────────────────────────────── */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
-          {CHANNELS.map((ch, i) => (
-            <ChannelCard key={ch.id} channel={ch} delay={i * 0.15} />
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+          {CHANNELS.map(function(ch, i) {
+            return <ChannelCard key={ch.id} channel={ch} delay={i * 0.12} />;
+          })}
         </div>
 
-        {/* ── Additional note ──────────────────────────────────── */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -176,7 +159,7 @@ export default function Contact() {
           transition={{ delay: 0.5 }}
           className="text-center font-body text-xs text-brand-muted mt-10 tracking-wide"
         >
-          Respondemos en menos de 24 horas · Lima, Perú
+          Respondemos en menos de 24 horas · Lima, Peru
         </motion.p>
       </div>
     </section>

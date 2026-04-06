@@ -1,115 +1,137 @@
 'use client';
 
-// ─────────────────────────────────────────────────────────────────────────
-// components/Hero.jsx
-// Full-screen hero: staggered title reveal, animated badge, parallax bg
-// ─────────────────────────────────────────────────────────────────────────
-
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-/* ── Ticker tape data ───────────────────────────────────────────────── */
-const TICKER_ITEMS = [
-  'BOXYFIT', 'STREETWEAR', 'STYLUM', 'ATTITUDE', 'URBAN',
-  'MINIMAL', 'BOXYFIT', 'STREETWEAR', 'STYLUM', 'ATTITUDE', 'URBAN', 'MINIMAL',
-];
+const TICKER = ['BOXYFIT', 'STREETWEAR', 'STYLUM', 'LIMA PERU', 'EDICION LIMITADA', 'BOXYFIT', 'STREETWEAR', 'STYLUM', 'LIMA PERU', 'EDICION LIMITADA'];
 
-/* ── Animation variants ─────────────────────────────────────────────── */
 const containerVariants = {
   hidden: {},
-  show: {
-    transition: { staggerChildren: 0.12, delayChildren: 0.4 },
-  },
+  show: { transition: { staggerChildren: 0.1, delayChildren: 0.3 } },
 };
 
 const lineVariants = {
   hidden: { y: '110%', opacity: 0 },
-  show: {
-    y: '0%', opacity: 1,
-    transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] },
-  },
+  show: { y: '0%', opacity: 1, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } },
 };
 
 const fadeUp = {
   hidden: { y: 30, opacity: 0 },
-  show: {
-    y: 0, opacity: 1,
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
-  },
+  show: { y: 0, opacity: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
 };
 
 export default function Hero() {
   const sectionRef = useRef(null);
-
-  // ── Parallax: bg moves slower than scroll ──────────────────────────
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start start', 'end start'],
-  });
-  const bgY   = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
-  const textY = useTransform(scrollYProgress, [0, 1], ['0%', '15%']);
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end start'] });
+  const bgY   = useTransform(scrollYProgress, [0, 1], ['0%', '25%']);
+  const textY = useTransform(scrollYProgress, [0, 1], ['0%', '12%']);
 
   return (
     <section
       ref={sectionRef}
       id="inicio"
-      className="relative w-full h-screen min-h-[680px] flex flex-col items-center justify-center overflow-hidden bg-brand-black"
+      className="relative w-full h-screen min-h-[680px] flex flex-col items-center justify-center overflow-hidden"
+      style={{ background: 'linear-gradient(180deg, #0d0d0d 0%, #0A0A0A 100%)' }}
     >
-
-      {/* ── Background: subtle grid + accent blob ─────────────────── */}
+      {/* Grid de fondo */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 pointer-events-none">
-        {/* Fine grid */}
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0"
           style={{
-            backgroundImage:
-              'linear-gradient(var(--c-white) 1px, transparent 1px), linear-gradient(90deg, var(--c-white) 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
+            backgroundImage: 'linear-gradient(rgba(110,198,230,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(110,198,230,0.04) 1px, transparent 1px)',
+            backgroundSize: '80px 80px',
           }}
         />
-        {/* Glowing accent blob */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-brand-accent/5 blur-[120px]" />
-        {/* Corner accent dots */}
-        <div className="absolute top-8 left-8 w-2 h-2 rounded-full bg-brand-accent opacity-60" />
-        <div className="absolute top-8 right-8 w-2 h-2 rounded-full bg-brand-accent opacity-60" />
-        <div className="absolute bottom-24 left-8 w-1 h-1 rounded-full bg-brand-dim opacity-40" />
-        <div className="absolute bottom-24 right-8 w-1 h-1 rounded-full bg-brand-dim opacity-40" />
+        {/* Glow central */}
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none"
+          style={{
+            width: '700px',
+            height: '400px',
+            background: 'radial-gradient(ellipse, rgba(110,198,230,0.08) 0%, transparent 70%)',
+          }}
+        />
+        {/* Dots decorativos */}
+        <div className="absolute top-12 left-12 w-1.5 h-1.5 rounded-full bg-brand-accent opacity-60" />
+        <div className="absolute top-12 right-12 w-1.5 h-1.5 rounded-full bg-brand-accent opacity-60" />
+        <div className="absolute bottom-28 left-12 w-1 h-1 rounded-full bg-brand-border opacity-60" />
+        <div className="absolute bottom-28 right-12 w-1 h-1 rounded-full bg-brand-border opacity-60" />
       </motion.div>
 
-      {/* ── Main content ──────────────────────────────────────────── */}
-      <motion.div
-        style={{ y: textY }}
-        className="relative z-10 flex flex-col items-center text-center px-6"
+      {/* Personaje decorativo */}
+      <div
+        className="absolute right-0 bottom-16 hidden lg:block pointer-events-none select-none"
+        style={{ width: '28vw', maxWidth: '380px' }}
       >
-        {/* Eyebrow label */}
+        <img
+          src="/PERSONAJE_STYLUM.png"
+          alt=""
+          className="w-full h-auto invert"
+          style={{
+            opacity: 0.07,
+            maskImage: 'linear-gradient(to top, transparent 0%, black 40%)',
+            WebkitMaskImage: 'linear-gradient(to top, transparent 0%, black 40%)',
+          }}
+        />
+      </div>
+
+      {/* Contenido principal */}
+      <motion.div style={{ y: textY }} className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl mx-auto">
+
+        {/* Eyebrow */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex items-center gap-3 mb-8 md:mb-10"
+          className="flex items-center gap-3 mb-8"
         >
-          <span className="w-8 h-px bg-brand-accent" />
+          <span className="w-10 h-px bg-brand-accent" />
           <span className="font-body text-xs font-medium tracking-mega uppercase text-brand-accent">
-            Nueva Colección 2025
+            Nueva Coleccion 2025
           </span>
-          <span className="w-8 h-px bg-brand-accent" />
+          <span className="w-10 h-px bg-brand-accent" />
         </motion.div>
 
-        {/* ── STYLUM wordmark ──────────────────────────────────── */}
+        {/* Logo image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mb-6 md:mb-8"
+        >
+          <img
+            src="/LOGO_STYLUM.png"
+            alt="STYLUM"
+            className="h-16 md:h-24 w-auto mx-auto"
+            style={{ filter: 'invert(1)', opacity: 0.95 }}
+          />
+        </motion.div>
+
+        {/* Wordmark grande */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="show"
-          className="overflow-hidden"
+          className="mb-6"
         >
-          {/* Clip each letter line */}
-          <motion.div variants={lineVariants} className="flex justify-center">
-  <img
-    src="/LOGO STYLUM.png"
-    alt="STYLUM"
-    className="w-[80vw] md:w-[55vw] lg:w-[45vw] max-w-2xl brightness-0 invert"
-  />
-</motion.div>
+          {['STREET', 'WEAR'].map(function(part, i) {
+            return (
+              <div key={i} className="overflow-hidden leading-none">
+                <motion.span
+                  variants={lineVariants}
+                  className="block font-display font-900 uppercase"
+                  style={{
+                    fontSize: 'clamp(4rem, 18vw, 14rem)',
+                    letterSpacing: '-0.02em',
+                    lineHeight: 0.85,
+                    color: i === 0 ? '#F0F0F0' : '#6EC6E6',
+                  }}
+                >
+                  {part}
+                </motion.span>
+              </div>
+            );
+          })}
         </motion.div>
 
         {/* Tagline */}
@@ -117,91 +139,100 @@ export default function Hero() {
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          transition={{ delay: 0.9 }}
-          className="mt-6 md:mt-8 font-body text-base md:text-lg font-light tracking-wider text-brand-dim uppercase"
+          transition={{ delay: 0.8 }}
+          className="font-body text-sm md:text-base font-light tracking-wider text-brand-dim uppercase mb-10"
         >
-          Streetwear with attitude
+          with attitude — Lima, Peru
         </motion.p>
 
-        {/* CTA buttons */}
+        {/* CTAs */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          transition={{ delay: 1.1 }}
-          className="mt-10 flex flex-col sm:flex-row items-center gap-4"
+          transition={{ delay: 1.0 }}
+          className="flex flex-col sm:flex-row items-center gap-4"
         >
+          {/* Boton primario */}
           <a
             href="#coleccion"
-            className="group relative inline-flex items-center gap-3 bg-brand-accent text-brand-black font-body text-sm font-semibold tracking-wider uppercase px-8 py-4 overflow-hidden transition-all duration-300 hover:gap-5"
+            className="group relative inline-flex items-center gap-3 font-body text-sm font-bold tracking-wider uppercase px-8 py-4 overflow-hidden transition-all duration-300"
+            style={{ background: '#6EC6E6', color: '#000' }}
           >
-            <span className="relative z-10">Explorar colección</span>
-            <svg
-              className="relative z-10 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
-              fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}
-            >
+            <span className="relative z-10">Explorar coleccion</span>
+            <svg className="relative z-10 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
             </svg>
-            {/* Fill from left on hover */}
-            <span className="absolute inset-0 bg-brand-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-300" />
+            {/* Hover fill */}
+            <span
+              className="absolute inset-0 transition-transform duration-300"
+              style={{ background: '#fff', transform: 'translateX(-101%)', zIndex: 0 }}
+              onMouseEnter={function(e) { e.currentTarget.style.transform = 'translateX(0)'; }}
+            />
           </a>
 
+          {/* Boton secundario */}
           <a
             href="#nosotros"
-            className="inline-flex items-center gap-2 font-body text-sm font-medium tracking-wider text-brand-dim uppercase hover:text-brand-white transition-colors duration-300 border-b border-brand-muted hover:border-brand-white pb-0.5"
+            className="font-body text-sm font-medium tracking-wider text-brand-dim uppercase hover:text-brand-white transition-colors duration-300 border-b border-brand-muted hover:border-brand-white pb-0.5"
           >
             Nuestra historia
           </a>
         </motion.div>
+
+        {/* Stats rapidos */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.3 }}
+          className="flex items-center gap-8 mt-12 pt-8 border-t border-brand-border"
+        >
+          {[
+            { num: '100%', label: 'Algodon premium' },
+            { num: '3',    label: 'Diseños exclusivos' },
+            { num: '24h',  label: 'Envio Lima' },
+          ].map(function(stat, i) {
+            return (
+              <div key={i} className="text-center">
+                <p className="font-display text-xl font-900 text-brand-accent">{stat.num}</p>
+                <p className="font-body text-xs text-brand-muted uppercase tracking-wider mt-0.5">{stat.label}</p>
+              </div>
+            );
+          })}
+        </motion.div>
       </motion.div>
 
-      {/* ── Scroll indicator ──────────────────────────────────────── */}
+      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.6, duration: 0.8 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        transition={{ delay: 1.8 }}
+        className="absolute bottom-20 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="font-body text-[10px] tracking-mega text-brand-muted uppercase">Scroll</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
-          className="w-px h-8 bg-gradient-to-b from-brand-muted to-transparent"
+          className="w-px h-10 bg-gradient-to-b from-brand-accent to-transparent"
         />
+        <span className="font-body text-xs tracking-mega text-brand-muted uppercase">Scroll</span>
       </motion.div>
 
-      {/* ── Bottom ticker tape ────────────────────────────────────── */}
-      <div className="absolute bottom-0 left-0 right-0 overflow-hidden border-t border-brand-border bg-brand-surface/40 backdrop-blur-sm py-2.5">
+      {/* Ticker */}
+      <div
+        className="absolute bottom-0 left-0 right-0 overflow-hidden border-t py-3"
+        style={{ borderColor: '#1e1e1e', background: 'rgba(20,20,20,0.8)', backdropFilter: 'blur(8px)' }}
+      >
         <div className="flex whitespace-nowrap animate-ticker">
-          {[...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (
-            <span
-              key={i}
-              className="inline-flex items-center gap-6 px-6 font-display text-sm font-700 tracking-ultra text-brand-muted uppercase"
-            >
-              {item}
-              <span className="inline-block w-1 h-1 rounded-full bg-brand-accent" />
-            </span>
-          ))}
+          {[...TICKER, ...TICKER].map(function(item, i) {
+            return (
+              <span key={i} className="inline-flex items-center gap-5 px-6 font-display text-xs font-700 tracking-ultra text-brand-muted uppercase">
+                {item}
+                <span className="inline-block w-1 h-1 rounded-full bg-brand-accent" />
+              </span>
+            );
+          })}
         </div>
       </div>
-
-      {/* ── Character illustration ───────────────────────────── */}
-        <motion.div
-          initial={{ opacity: 0, x: 60, y: 20 }}
-          animate={{ opacity: 1, x: 0, y: 0 }}
-          transition={{ duration: 1.2, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute bottom-16 right-0 w-[45vw] md:w-[30vw] lg:w-[25vw] max-w-sm pointer-events-none select-none hidden md:block"
-        >
-          <img
-            src="/PERSONAJE STYLUM.png"
-            alt="Personaje"
-            className="w-full h-auto opacity-20 invert"
-            style={{
-              maskImage: 'linear-gradient(to top, transparent 0%, black 35%)',
-              WebkitMaskImage: 'linear-gradient(to top, transparent 0%, black 35%)',
-            }}
-          />
-        </motion.div>
     </section>
   );
 }
