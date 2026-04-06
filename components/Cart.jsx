@@ -9,7 +9,7 @@ function CartItem({ item }) {
   return (
     <div className="flex gap-3 py-4 border-b border-brand-border last:border-0">
       <div className="w-14 h-16 flex-shrink-0 overflow-hidden bg-brand-border border border-brand-border">
-        <img src={item.image || item.front || '/LOGO_STYLUM.png'} alt={item.name} className="w-full h-full object-cover" />
+        <img src={item.image || item.front || '/LOGO STYLUM.png'} alt={item.name} className="w-full h-full object-cover" />
       </div>
       <div className="flex-1 flex flex-col gap-1">
         <p className="font-display text-xs font-900 text-brand-white uppercase tracking-tight leading-tight">{item.name}</p>

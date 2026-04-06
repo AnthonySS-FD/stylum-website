@@ -100,7 +100,7 @@ export default function Hero() {
           className="mb-6 md:mb-8"
         >
           <img
-            src="/LOGO_STYLUM.png"
+            src="/LOGO STYLUM.png"
             alt="STYLUM"
             className="h-16 md:h-24 w-auto mx-auto"
             style={{ filter: 'invert(1)', opacity: 0.95 }}

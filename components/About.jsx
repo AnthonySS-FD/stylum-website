@@ -89,7 +89,7 @@ export default function About() {
               >
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(110,198,230,0.1)', border: '1px solid rgba(110,198,230,0.3)' }}>
-                    <img src="/LOGO_STYLUM.png" alt="STYLUM" className="w-10 h-auto" style={{ filter: 'invert(1)', opacity: 0.8 }} />
+                    <img src="/LOGO STYLUM.png" alt="STYLUM" className="w-10 h-auto" style={{ filter: 'invert(1)', opacity: 0.8 }} />
                   </div>
                   <div>
                     <p className="font-display text-lg font-900 text-brand-white uppercase tracking-tight">Lima, Peru</p>

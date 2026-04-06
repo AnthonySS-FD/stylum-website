@@ -78,7 +78,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <img
-              src="/LOGO_STYLUM.png"
+              src="/LOGO STYLUM.png"
               alt="STYLUM"
               className="h-8 w-auto"
               style={{ filter: 'invert(1)', opacity: 0.9 }}

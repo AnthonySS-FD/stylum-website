@@ -50,7 +50,7 @@ export default function Footer() {
           <div className="flex flex-col gap-5 max-w-xs">
             <Link href="/">
               <img
-                src="/LOGO_STYLUM.png"
+                src="/LOGO STYLUM.png"
                 alt="STYLUM"
                 className="h-10 w-auto"
                 style={{ filter: 'invert(1)', opacity: 0.85 }}

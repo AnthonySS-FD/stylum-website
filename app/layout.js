@@ -115,7 +115,7 @@ export default function RootLayout({ children }) {
               description:
                 'Marca de streetwear peruana. Polos BOXYFIT con diseño exclusivo y tela premium.',
               url: BASE_URL,
-              logo: BASE_URL + '/LOGO_STYLUM.png',
+              logo: BASE_URL + '/LOGO STYLUM.png',
               image: BASE_URL + '/og-image.jpg',
               telephone: '+51934357309',
               address: {
