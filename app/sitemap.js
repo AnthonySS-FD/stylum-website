@@ -1,7 +1,7 @@
 // app/sitemap.js
 // Sitemap automatico — Google usa esto para indexar tu web
 
-var BASE_URL = 'https://stylum-kappa.vercel.app';
+var BASE_URL = 'https://www.stylum.pe';
 
 export default function sitemap() {
   return [
