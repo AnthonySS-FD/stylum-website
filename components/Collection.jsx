@@ -18,8 +18,8 @@ var PRODUCTS = [
   {
     id: 1,
     name: 'BOXYFIT Stylum Green',
-    price: 'S/. 49.90',
-    priceNumber: 49.90,
+    price: 'S/. 50.00',
+    priceNumber: 50.00,
     tag: 'Mas vendido',
     color: 'Verde botella',
     front: '/BOXY_VERDEBOTELLA.jpg',
@@ -28,8 +28,8 @@ var PRODUCTS = [
   {
     id: 2,
     name: 'BOXYFIT White & Black',
-    price: 'S/. 49.90',
-    priceNumber: 49.90,
+    price: 'S/. 50.00',
+    priceNumber: 50.00,
     tag: 'Nuevo',
     color: 'Blanco y Negro',
     front: '/BOXY_BLANCOYNEGRO.png',   // ✅ CORREGIDO
@@ -38,8 +38,8 @@ var PRODUCTS = [
   {
     id: 3,
     name: 'BOXYFIT Stone Guinda',
-    price: 'S/. 49.90',
-    priceNumber: 49.90,
+    price: 'S/. 50.00',
+    priceNumber: 50.00,
     tag: null,
     color: 'Guinda',
     front: '/BOXY_GUINDA.png',
@@ -545,7 +545,7 @@ export default function Collection() {
               className="flex flex-col gap-4"
             >
               <p className="font-body text-sm leading-relaxed max-w-xs" style={{ color: '#888' }}>
-                Corte oversize con estructura box. Telas premium y acabados impecables. Cada polo es edicion limitada.
+                Corte Boxyfit con estructura española. Telas premium y acabados impecables. Cada polo es edicion limitada.
               </p>
 
               <button

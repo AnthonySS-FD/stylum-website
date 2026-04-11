@@ -87,7 +87,7 @@ export default function Hero() {
         >
           <span className="w-10 h-px bg-brand-accent" />
           <span className="font-body text-xs font-medium tracking-mega uppercase text-brand-accent">
-            Nueva Coleccion 2025
+            Nueva Coleccion 2026
           </span>
           <span className="w-10 h-px bg-brand-accent" />
         </motion.div>
@@ -117,7 +117,7 @@ export default function Hero() {
           transition={{ delay: 0.8 }}
           className="font-body text-sm md:text-base font-light tracking-wider text-brand-dim uppercase mb-10"
         >
-          with attitude — Lima, Peru
+          with attitude — Lima, Perú
         </motion.p>
 
         {/* CTAs */}

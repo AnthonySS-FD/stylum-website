@@ -9,12 +9,12 @@ import LoadingScreen from '@/components/LoadingScreen';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
 // ── URL base de tu web ── cambia si tienes dominio propio
-var BASE_URL = 'https://stylum.pe';
+var BASE_URL = 'https://www.stylum.pe';
 
 export const metadata = {
   // ── Titulo y descripcion ──────────────────────────────────────
   title: {
-    default: 'STYLUM — Streetwear con actitud | Polos BOXYFIT Peru',
+    default: 'STYLUM | Polos BOXYFIT Streetwear Peru | Compra Online',
     template: '%s | STYLUM',
   },
   description:
