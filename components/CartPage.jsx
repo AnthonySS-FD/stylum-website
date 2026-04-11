@@ -57,7 +57,6 @@ var SIZE_CHART = [
   { talla: 'S',  pecho: '102', largo: '68', hombro: '47' },
   { talla: 'M',  pecho: '108', largo: '71', hombro: '50' },
   { talla: 'L',  pecho: '114', largo: '74', hombro: '53' },
-  { talla: 'XL', pecho: '120', largo: '77', hombro: '56' },
 ];
 
 function SizeChartModal({ onClose }) {
@@ -133,7 +132,7 @@ function CartRow({ item }) {
         <div className="flex items-center gap-4">
           <div className="w-16 h-20 flex-shrink-0 overflow-hidden bg-brand-border border border-brand-border">
             <img
-              src={item.image || item.front || '/LOGO_STYLUM.png'}
+              src={item.image || item.front || '/LOGO STYLUM.png'}
               alt={item.name}
               className="w-full h-full object-cover"
             />
@@ -402,7 +401,7 @@ export default function CartPage() {
                       <div key={i} className="flex items-center gap-3">
                         <div className="relative flex-shrink-0">
                           <div className="w-12 h-14 overflow-hidden bg-brand-border border border-brand-border">
-                            <img src={item.image || item.front || '/LOGO_STYLUM.png'} alt={item.name} className="w-full h-full object-cover" />
+                            <img src={item.image || item.front || '/LOGO STYLUM.png'} alt={item.name} className="w-full h-full object-cover" />
                           </div>
                           <span className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-brand-accent text-brand-black font-bold rounded-full flex items-center justify-center" style={{ fontSize: '10px' }}>
                             {item.quantity}
@@ -606,7 +605,7 @@ export default function CartPage() {
                       <div key={i} className="flex items-center gap-3">
                         <div className="relative flex-shrink-0">
                           <div className="w-14 h-16 overflow-hidden bg-brand-border border border-brand-border">
-                            <img src={item.image || item.front || '/LOGO_STYLUM.png'} alt={item.name} className="w-full h-full object-cover" />
+                            <img src={item.image || item.front || '/LOGO STYLUM.png'} alt={item.name} className="w-full h-full object-cover" />
                           </div>
                           <span className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-brand-accent text-brand-black font-bold rounded-full flex items-center justify-center" style={{ fontSize: '10px' }}>
                             {item.quantity}
