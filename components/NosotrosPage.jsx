@@ -159,7 +159,7 @@ export default function NosotrosPage() {
       {/* ── NAVBAR simple de regreso ─────────────────────────── */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-brand-black/90 backdrop-blur-md border-b border-brand-border">
         <div className="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
-          <a href="#" className="flex items-center">
+          <a href="/" className="flex items-center">
             <img
               src="/LOGO STYLUM.png"
               alt="STYLUM"
