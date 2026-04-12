@@ -48,7 +48,7 @@ export const metadata = {
     locale: 'es_PE',
     url: BASE_URL,
     siteName: 'STYLUM',
-    title: 'STYLUM — Streetwear con actitud | Polos BOXYFIT Peru',
+    title: 'STYLUM — Polos BOXYFIT Peru | Streetwear con actitud',
     description:
       'Polos BOXYFIT con diseño exclusivo y tela premium. Marca streetwear peruana. Envios a todo el Peru.',
     images: [

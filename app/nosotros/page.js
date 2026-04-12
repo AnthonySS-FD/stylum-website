@@ -4,7 +4,7 @@
 import NosotrosPage from '@/components/NosotrosPage';
 
 export const metadata = {
-  title: 'Nosotros — STYLUM | Streetwear con identidad',
+  title: 'STYLUM — Nosotros | Streetwear con identidad',
   description: 'Conoce la historia, mision y valores de STYLUM. Marca de streetwear peruana con cortes BOXYFIT, disenio exclusivo y tela de alta calidad.',
 };
 

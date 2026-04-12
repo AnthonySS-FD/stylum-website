@@ -19,9 +19,9 @@ var PRODUCTS = [
   {
     id: 1,
     name: 'BOXYFIT Stylum Green',
-    price: 'S/. 49.90',
-    priceNumber: 49.90,
-    tag: 'Mas vendido',
+    price: 'S/. 50.00',
+    priceNumber: 50.00,
+    tag: 'Nuevo',
     color: 'Verde botella',
     front: '/BOXY_VERDEBOTELLA.jpg',
     back:  '/BOXY_VERDE_REVERSA.jpg',
@@ -29,8 +29,8 @@ var PRODUCTS = [
   {
     id: 2,
     name: 'BOXYFIT White & Black',
-    price: 'S/. 49.90',
-    priceNumber: 49.90,
+    price: 'S/. 50.00',
+    priceNumber: 50.00,
     tag: 'Nuevo',
     color: 'Blanco y Negro',
     front: '/BOXY_BLANCOYNEGRO.png',
@@ -39,9 +39,9 @@ var PRODUCTS = [
   {
     id: 3,
     name: 'BOXYFIT Stone Guinda',
-    price: 'S/. 49.90',
-    priceNumber: 49.90,
-    tag: null,
+    price: 'S/. 50.00',
+    priceNumber: 50.00,
+    tag: 'Nuevo',
     color: 'Guinda',
     front: '/BOXY_GUINDA.png',
     back:  '/BOXY_GUINDA_REVERSA.jpeg',
@@ -472,7 +472,7 @@ export default function Collection() {
                 className="font-body text-sm leading-relaxed max-w-xs"
                 style={{ color: '#888' }}
               >
-                Corte oversize con estructura box. Telas premium y acabados impecables. Cada polo es edicion limitada.
+                Corte boxyfit con estructura cuadrada. Telas premium y acabados impecables. Cada polo es edicion limitada.
               </motion.p>
 
               <motion.button

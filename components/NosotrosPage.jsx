@@ -320,7 +320,7 @@ export default function NosotrosPage() {
                   "El streetwear real habla sin gritar."
                 </p>
                 <p className="font-body text-xs text-brand-muted mt-3 uppercase tracking-wider">
-                  — STYLUM, Lima 2024
+                  — STYLUM, Lima 2026
                 </p>
               </motion.blockquote>
             </div>
@@ -601,7 +601,7 @@ export default function NosotrosPage() {
               })}
 
               {[
-                'El personaje STYLUM es mas que un logo. Es la representacion visual de la actitud que buscamos en cada persona que viste la marca — cabeza agachada, enfocado, con determinacion.',
+                'El personaje STYLUM es mas que un logo. Es la representacion visual de la actitud que buscamos en cada persona que viste la marca — cabeza en alto, enfocado, con determinacion.',
                 'Creado desde cero, exclusivo de STYLUM, aparece en la espalda de cada polo como un sello de identidad. No lo veras en ninguna otra marca porque es completamente nuestro.',
                 'Cada coleccion lleva el mismo personaje, pero en contextos distintos — evolucionando junto con la marca, contando una historia que apenas empieza.',
               ].map(function(text, i) {

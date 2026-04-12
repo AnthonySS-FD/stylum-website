@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion';
 
 var PILLARS = [
   { number: '100%', label: 'Algodon premium' },
-  { number: 'OVS',  label: 'Corte oversize'  },
+  { number: 'BOXY',  label: 'Corte boxyfit'  },
   { number: '3+',   label: 'Colores exclusivos' },
   { number: 'PE',   label: 'Hecho en Peru'   },
 ];
@@ -128,7 +128,7 @@ export default function About() {
                 "El streetwear real habla sin gritar."
               </p>
               <p className="font-body text-xs text-brand-muted mt-2 uppercase tracking-wider">
-                — STYLUM, Lima 2024
+                — STYLUM, Lima 2026.
               </p>
             </motion.blockquote>
 
