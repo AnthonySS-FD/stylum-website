@@ -33,9 +33,9 @@ var CHANNELS = [
   {
     id: 'tiktok',
     name: 'TikTok',
-    handle: '@stylum25',
+    handle: '@stylum.oficial',
     desc: 'Contenido, behind the scenes y cultura STYLUM.',
-    href: 'https://tiktok.com/@stylum25',
+    href: 'https://tiktok.com/@stylum.oficial',
     color: '#F0F0F0',
     icon: (
       <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">

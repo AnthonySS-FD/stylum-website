@@ -13,7 +13,7 @@ var LINKS = [
 var SOCIAL = [
   { label: 'Instagram', href: 'https://instagram.com/stylum.oficial' },
   { label: 'WhatsApp',  href: 'https://wa.me/51934357309'            },
-  { label: 'TikTok',    href: 'https://tiktok.com/@stylum25'         },
+  { label: 'TikTok',    href: 'https://tiktok.com/@stylum.oficial'         },
 ];
 
 export default function Footer() {
