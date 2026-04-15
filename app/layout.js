@@ -125,7 +125,7 @@ export default function RootLayout({ children }) {
               },
               sameAs: [
                 'https://instagram.com/stylum.oficial',
-                'https://tiktok.com/@stylum25',
+                'https://tiktok.com/@stylum.oficial',
               ],
               priceRange: 'S/. 49 - S/. 99',
               openingHours: 'Mo-Sa 09:00-21:00',
